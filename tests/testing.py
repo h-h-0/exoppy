@@ -1,14 +1,21 @@
 import sys
 import os
 
-sys.path.append(os.path.dirname("E:\\Projects\\Ideal_LCs\\main.py"))
+# Get the absolute path of the directory containing exopy.py
+module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'exopy.py'))
+module_dir = os.path.dirname(module_path)
 
+# append the directory to sys.path
+sys.path.append(module_dir)
+
+# importing the module 
 import exopy
 
-data = exopy.with_noise(5, 10, 1, 10)
+test1 = exopy.with_noise(5, 10, 1, 10)
+test2 = exopy.with_radius(5, 20)
 
+
+# visualizing the functions
 import matplotlib.pyplot as plt
-
-data2 = exopy.with_radius(5, 20)
-plt.plot(data[0], data[1])
+plt.plot(test2[0], test2[1])
 plt.show()
