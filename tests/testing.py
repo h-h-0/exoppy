@@ -9,10 +9,10 @@ module_dir = os.path.dirname(module_path)
 sys.path.append(module_dir)
 
 # importing the module 
-import exopy
+import exopy.lightcurve as lightcurve
 
-test1 = exopy.with_noise(5, 10, 1, 10)
-test2 = exopy.with_radius(5, 20)
+test1 = lightcurve.with_noise(5, 10, 1, 10)
+test2 = lightcurve.with_radius(5, 20)
 
 
 # visualizing the functions
