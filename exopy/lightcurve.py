@@ -20,7 +20,7 @@ def with_noise(period, duration, depth, t_total, t_resolution=1000, noise_level=
                         level of Gaussian noise to add to the light curve.
 
     Returns:
-        tuple       : Two arrays representing time and flux.
+        tuple       : Two arrays representing time and flux as the dataset for lightcurve 
     
     """
 
@@ -56,7 +56,7 @@ def with_radius(R_planet, R_star, transit_duration=0.01, num_points=1000):
 
     Returns:
 
-        tuple       : Two arrays representing time and flux.
+        tuple       : Two arrays representing time and flux as the dataset for lightcurve 
 
     """
     
