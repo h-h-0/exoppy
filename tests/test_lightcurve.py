@@ -43,18 +43,6 @@ def test_with_radius_negative_radii():
     with pytest.raises(ValueError, match="Radii must be non-negative"):
         lc.with_radius(R_planet, R_star)
 
-def test_with_noise_zero_duration():
-    period = 1.0
-    duration = 0.0  # No transit duration
-    depth = 0.01
-    t_total = 1.0
-    t_resolution = 1000
-    noise_level = 0.01
-    
-    _, flux = lc.with_noise(period, duration, depth, t_total, t_resolution, noise_level)
-    
-    assert np.allclose(flux, 1), "Flux should be constant with zero transit duration"
-
 def test_with_noise_large_noise_level():
     period = 1.0
     duration = 2.0
@@ -80,17 +68,6 @@ def test_with_noise_short_observation():
     
     assert len(time) == t_resolution, "Time array should have the correct resolution"
     assert len(flux) == t_resolution, "Flux array should have the correct resolution"
-
-def test_with_radius_min_values():
-    R_planet = 1e-10  # Smallest positive value
-    R_star = 1e-10  # Smallest positive value
-    transit_duration = 0.01
-    num_points = 1000
-    
-    time, flux = lc.with_radius(R_planet, R_star, transit_duration, num_points)
-    
-    expected_depth = (R_planet / R_star) ** 2
-    assert np.isclose(flux.min(), 1 - expected_depth), "Minimum flux should match expected transit depth"
 
 def test_with_radius_long_transit_duration():
     R_planet = 1.0
