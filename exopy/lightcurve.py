@@ -59,6 +59,9 @@ def with_radius(R_planet, R_star, transit_duration=0.01, num_points=1000):
         tuple       : Two arrays representing time and flux as the dataset for lightcurve 
 
     """
+    if R_planet < 0 or R_star < 0:
+        raise ValueError("Radii must be non-negative.")
+    
     if R_planet >= R_star:
         raise ValueError("The planet's radius must be smaller than the star's radius.")
     
