@@ -1,5 +1,36 @@
 import numpy as np
 
+def with_depth(depth, transit_duration=0.01, num_points=1000):
+    
+    """
+
+    Parameters:
+
+        depth           :   float
+                            Depth of the transit (fractional decrease in flux)
+        transit_duration:   float 
+                            Duration of the transit in days.
+        num_points      :   int
+                            Number of data points in the lightcurve.
+
+    Returns:
+        tuple           :   Two arrays representing time and flux as the dataset for lightcurve 
+    
+    """
+    
+
+    # Create a time array
+    time = np.linspace(-0.05, 0.05, num_points)
+
+    # Create a flux array
+    flux = np.ones_like(time)
+
+    # Define the transit duration and depth
+    in_transit = np.abs(time) < (transit_duration / 2)
+    flux[in_transit] -= depth
+
+    return time, flux
+
 def with_noise(period, duration, depth, t_total, t_resolution=1000, noise_level=0.01):
 
     """
