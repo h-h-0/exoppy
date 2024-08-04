@@ -17,7 +17,8 @@ def with_depth(depth, transit_duration=0.01, num_points=1000):
         tuple           :   Two arrays representing time and flux as the dataset for lightcurve 
     
     """
-    
+    if depth < 0 or depth > 1:
+        raise ValueError("Transit depth must be in range 0 < depth < 1")
 
     # Create a time array
     time = np.linspace(-0.05, 0.05, num_points)
