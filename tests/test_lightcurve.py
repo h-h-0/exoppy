@@ -22,6 +22,16 @@ import numpy as np
 #              testing
 # -------------------------------- #
 
+def test_with_negative_depth():
+    depth = -0.5
+    with pytest.raises(ValueError, match="Transit depth must be in range 0 < depth < 1"):
+        lc.with_depth(depth)
+
+def test_with_undefined_depth():
+    depth = 1.5
+    with pytest.raises(ValueError, match="Transit depth must be in range 0 < depth < 1"):
+        lc.with_depth(depth)
+        
 def test_with_radius_planet_smaller_than_star():
     R_planet = 1.0
     R_star = 1.0  # Same as planet, should raise error
