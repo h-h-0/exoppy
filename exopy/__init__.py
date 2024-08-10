@@ -1,1 +1,0 @@
-print("exopy installed: beta version")
