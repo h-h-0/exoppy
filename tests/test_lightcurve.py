@@ -6,7 +6,7 @@ import pytest
 #              path
 # -------------------------------- #
 
-module_dir = os.path.dirname(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'exopy.py')))
+module_dir = os.path.dirname(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'exoppy.py')))
 sys.path.append(module_dir)
 
 
@@ -14,7 +14,7 @@ sys.path.append(module_dir)
 #         importing module
 # -------------------------------- #
 
-import exopy.lightcurve as lc
+import exoppy.lightcurve as lc
 import numpy as np
 
 
