@@ -9,6 +9,7 @@ $$ \text{Transit Depth }  \delta = \left( \frac{R_\text{planet}}{R_\text{star}} 
 #### Dependencies 
 
 - NumPy 
+- Matplotlib
 
 #### Acknowledgements 
 
