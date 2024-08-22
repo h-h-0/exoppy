@@ -4,7 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "exoppy"
-version = "0.0.1"
+version = "1.0.0"
+description = "Python Package for Generating Synthetic Datasets of Exoplanets"
+readme = "README.md"
+license = {file = "LICENSE"}
 
 dependencies = [
  "numpy"
