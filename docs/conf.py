@@ -10,7 +10,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../exopy'))
 
-project = 'Exopy'
+project = 'Exoppy'
 copyright = '2024, K M Shariat Ullah, Hassan Habib'
 author = 'K M Shariat Ullah, Hassan Habib'
 root_doc = 'index'
