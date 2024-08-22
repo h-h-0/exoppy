@@ -6,6 +6,14 @@ This python package is designed to generate synthetic datasets of exoplanet ligh
 
 $$ \text{Transit Depth }  \delta = \left( \frac{R_\text{planet}}{R_\text{star}} \right)^2 = \frac{\Delta F}{F} $$
 
+#### Installation
+
+To install the Exoppy module in windows type the following command in commandline, terminal or powershell
+
+```
+pip install exoppy
+```
+
 #### Dependencies 
 
 - NumPy 
