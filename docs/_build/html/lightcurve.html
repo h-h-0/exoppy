@@ -117,6 +117,79 @@
   <section id="lightcurve-functions">
 <span id="lightcurve"></span><h1>Lightcurve Functions<a class="headerlink" href="#lightcurve-functions" title="Link to this heading">¶</a></h1>
 <p>Function to generate lightcurves using different methods.</p>
+<dl class="py function" id="module-lightcurve">
+<dt class="sig sig-object py" id="lightcurve.with_depth">
+<span class="sig-prename descclassname"><span class="pre">lightcurve.</span></span><span class="sig-name descname"><span class="pre">with_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transit_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lightcurve.with_depth" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>depth</strong> – float
+Depth of the transit (fractional decrease in flux)</p></li>
+<li><p><strong>transit_duration</strong> – float
+Duration of the transit in days.</p></li>
+<li><p><strong>num_points</strong> – int
+Number of data points in the lightcurve.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two arrays representing time and flux as the dataset for lightcurve</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lightcurve.with_noise">
+<span class="sig-prename descclassname"><span class="pre">lightcurve.</span></span><span class="sig-name descname"><span class="pre">with_noise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_total</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noise_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lightcurve.with_noise" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>period</strong> – float
+orbital period of the exoplanet (in days)</p></li>
+<li><p><strong>duration</strong> – float
+duration of the planetary transit (in hours)</p></li>
+<li><p><strong>depth</strong> – float
+depth of the transit (fractional decrease in flux)</p></li>
+<li><p><strong>t_total</strong> – float
+total duration of the observation (in days).</p></li>
+<li><p><strong>t_resolution</strong> – int
+number of time points in the light curve.</p></li>
+<li><p><strong>noise_level</strong> – float
+level of Gaussian noise to add to the light curve.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two arrays representing time and flux as the dataset for lightcurve</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lightcurve.with_radius">
+<span class="sig-prename descclassname"><span class="pre">lightcurve.</span></span><span class="sig-name descname"><span class="pre">with_radius</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R_planet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R_star</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transit_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lightcurve.with_radius" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R_planet</strong> (<em>float</em>) – Radius of the planet in Jupiter radii.</p></li>
+<li><p><strong>R_star</strong> (<em>float</em>) – Radius of the star in Solar radii.</p></li>
+<li><p><strong>transit_duration</strong> (<em>float</em>) – Duration of the transit in days.</p></li>
+<li><p><strong>num_points</strong> (<em>int</em>) – Number of data points in the lightcurve.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two arrays representing time and flux as the dataset for lightcurve</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
